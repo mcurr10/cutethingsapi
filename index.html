@@ -1,10 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng"> 
 
-<head>SUBMIT A  CUTE PHOTO</head>
-<h1> Animals, sanrio, flowers, and anything coquette are accetable</h1>
+<head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.cdnfonts.com/css/cute" 
+        /> 
 
+        <style>
+        body {
+            font-family: 'Cute', sans-serif;
+            font-family:'Spring', sans-serif;
+            margin: 5%;
+          }
+
+        </style>
+       <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13"></script>
+       <script src="https://unpkg.com/vue-silentbox@2.3.1/dist/vue-silentbox.min.js"></script>
+       <title>ery Cute: Submit a Cute Photo</title>
+</head>
+
+    <body>
+        <div id="app">
+          <h1>Very Cute: Submit a Cute Photo</h1>
+          <h2>{{ callToAction }}</h2>
+          <silent-box :gallery="gallery"></silent-box>
+        </div>
+
+</body>
+<h1> SUBMIT A  CUTE PHOTO </h1>
+<h2> Animals, sanrio, flowers, and anything coquette are accetable</h2>
+<body>
+
+
+    <script>
+        Vue.use(VueSilentbox.default);
+        const app = new Vue({
+          el: "#app",
+          data() {
+            return {
+              callToAction: "Submit your photos of  Cute Things",
+              gallery: [],
+            };
+          },
+          methods: {
+            async loadImages() {
+              // TODO: Use the Messaging API to use submitted photos
+              // const response = await fetch("/api/")
+              // TODO: Create a web-based API that matches this expected response
+              this.gallery = [
+                {
+                  src: "https://tenor.com/bSOLS.gif",
+                  description: "My Melody a Sanrio character",
+                  alt: "A kitteh",
+                  thumbnailWidth: "200px",
+                },
+                {
+                  src: "https://tenor.com/q0XKUS1zGaK.gif",
+                  description: " A dogie",
+                  alt: "Cutie",
+                  thumbnailWidth: "200px",
+                },
+              ];
+            },
+          },
+          mounted() {
+            this.loadImages();
+          },
+        });
+      </script>
+</body>
 </html>
-
-<head>SUBMIT A  CUTE PHOTO</head>
-<h1> Animals, sanrio, flowers, and anything coquette are accetable</h1>
